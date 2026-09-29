@@ -1,0 +1,131 @@
+/* ==UserStyle==
+@name         Shopee Seller Dark Mode
+@namespace    shopee-seller-dark
+@version      1.0.0
+@description  Dark mode for Shopee Seller web
+@author				flumiie
+@license      MIT
+@preprocessor default
+==/UserStyle== */
+@-moz-document domain("seller.shopee.co.id"),
+domain("seller.shopee.sg"),
+domain(seller.shopee.com.my),
+domain(seller.shopee.ph),
+domain(seller.shopee.co.th),
+domain(seller.shopee.vn),
+domain(seller.shopee.tw),
+domain(seller.shopee.com.br),
+domain(seller.shopee.com.mx) {
+  :root {
+    color-scheme: dark;
+  }
+
+  #aiOptimizerTour {
+    display: none;
+  }
+
+  html {
+    background-color: #fff !important;
+    filter: invert(1) !important;
+  }
+  body {
+    overflow: auto;
+    background-color: #fff !important;
+  }
+
+  :has(
+      img,
+      video,
+      canvas,
+      picture,
+      iframe,
+      object,
+      embed,
+      image,
+      [style*="url("]
+    )
+    > :not(
+      :has(
+        img,
+        video,
+        canvas,
+        picture,
+        iframe,
+        object,
+        embed,
+        image,
+        [style*="url("]
+      )
+    ):not(
+      img,
+      video,
+      canvas,
+      picture,
+      iframe,
+      object,
+      embed,
+      image,
+      [style*="url("]
+    ) {
+    filter: hue-rotate(180deg) saturate(1.5) !important;
+  }
+
+  img,
+  video,
+  canvas,
+  picture,
+  iframe,
+  object,
+  embed,
+  image,
+  [style*="url("] {
+    filter: invert(1) !important;
+  }
+
+  picture img,
+  picture video,
+  [style*="url("] > img,
+  [style*="url("] > video,
+  [style*="url("] > picture {
+    filter: none !important;
+  }
+
+  [style*="url("] > *:not(img):not(video):not(picture) {
+    filter: invert(1) hue-rotate(180deg) saturate(1.5) !important;
+  }
+
+  [style*="url("] [style*="url("] {
+    filter: none !important;
+  }
+
+  [data-v-33d8edc6] .tag-product-type.default.eds-tag {
+    border-color: #523c00;
+  }
+  .tag-name {
+    color: #523c00;
+  }
+
+  /* If some picture still looks inverted, inspect it, copy its class name
+     and add it below this comment block:
+
+		.some-image-class {
+			filter: invert(1) !important;
+		}
+  */
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #fff;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 6px;
+  }
+  ::selection {
+    background: #ee4d2d;
+    color: #fff;
+  }
+}
